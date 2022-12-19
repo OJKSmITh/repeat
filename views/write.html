@@ -9,18 +9,18 @@
 </head>
 
 <body>
-    <form method="get" action="/view">
+    <form method="post" action="/write">
         <div>
-            제목 : <input type="text">
+            제목 : <input type="text" name="subject">
         </div>
         <div>
-            작성자: <input type="text">
+            작성자: <input type="text" name="name">
         </div>
         <div>
-            내용 <br />
+            내용 <br>
             <textarea name="content"></textarea>
         </div>
-        <button type="submit"> 완성</button>
+        <button type="submit">완성</button>
     </form>
 </body>
 
