@@ -1,11 +1,18 @@
 const express = require('express')
 const app = express()
+const nunjucks = require('nunjucks')
 
-app.get('/', (req, res) => {
-    res.send("Hi!")
+app.set('view engine', 'html')
+nunjucks.configure('views', {
+    express: app,
 })
 
 
-app.listen(3000, () => {
-    console.log("서버열림!")
+app.get('/', (req, res) => {
+    const { name } = req.query
+    res.render("index.html", { name })
+})
+
+app.listen(3000, (req, res) => {
+    console.log("hi")
 })
